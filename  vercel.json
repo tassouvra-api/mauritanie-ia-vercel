@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "mauritanie_ia_api.py",
+      "src": "app.py",  <-- MODIFIÉ
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
     }
@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "mauritanie_ia_api.py"
+      "dest": "app.py"  <-- MODIFIÉ
     }
   ]
 }
