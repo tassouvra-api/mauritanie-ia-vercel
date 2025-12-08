@@ -62,16 +62,4 @@ def read_root():
     """Route de base pour vérifier que l'API est en ligne."""
     return {"message": "API Mauritanie IA est en ligne. Utilisez l'endpoint /api/ask (POST)."}
 
-# --- 5. ADAPTATEUR VERCEL (POUR CONTOURNER LE PROBLÈME) ---
-
-# Cette partie est ajoutée pour s'assurer que Vercel trouve un objet 'handler'
-# si l'objet 'app' n'est pas suffisant.
-# Elle nécessite l'installation de 'starlette' et 'fastapi.middleware.wsgi'
-# qui sont déjà incluses dans les dépendances standard.
-
-from starlette.applications import Starlette
-from starlette.middleware.wsgi import WSGIMiddleware
-
-# Créez une application Starlette simple qui monte votre FastAPI
-handler = Starlette()
-handler.mount("/", WSGIMiddleware(app))
+# --- FIN DU FICHIER ---
