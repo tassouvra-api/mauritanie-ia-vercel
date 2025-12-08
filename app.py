@@ -1,5 +1,6 @@
 import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware  # AJOUT POUR CORS
 from pydantic import BaseModel
 from openai import OpenAI
 
@@ -8,11 +9,20 @@ from openai import OpenAI
 # L'instance de l'application doit être ici pour que Vercel la trouve
 app = FastAPI()
 
+# --- AJOUT DU MIDDLEWARE CORS ---
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://tassouvra.com", "http://tassouvra.com"],  # Autoriser votre site
+    allow_credentials=True,
+    allow_methods=["*"],  # Autoriser toutes les méthodes HTTP
+    allow_headers=["*"],  # Autoriser tous les en-têtes
+ )
+# --- FIN AJOUT CORS ---
+
 # Récupération de la clé API
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # Initialisation du client OpenAI
-# Le client plantera si la clé n'est pas définie, ce qui est le comportement attendu sur Vercel
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # --- 2. DÉFINITION DU MODÈLE DE DONNÉES ---
