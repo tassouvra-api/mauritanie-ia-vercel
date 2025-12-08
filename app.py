@@ -1,6 +1,8 @@
 import os
 from openai import OpenAI
 
+from fastapi import FastAPI # Assurez-vous que cet import est là
+
 # ... (Le reste de vos imports)
 
 # --- NOUVEAU CODE POUR LIRE LA CLÉ DE L'ENVIRONNEMENT ---
