@@ -74,8 +74,8 @@ Réponds maintenant à la question de l'utilisateur en utilisant la base de conn
 
         # Appeler l'API OpenAI
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
+             model="gpt-4o",
+             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": question.question}
             ],
