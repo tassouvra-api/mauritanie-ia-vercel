@@ -60,7 +60,7 @@ BASE DE CONNAISSANCES COMPLÈTE :
 
 INSTRUCTIONS :
 1. Utilise UNIQUEMENT les informations de la base de connaissances ci-dessus
-2. Réponds en {question.language if question.language else 'français'} de manière professionnelle et structurée
+2. Réponds dans la langue de la question (arabe, français ou anglais) de manière professionnelle et structurée
 3. Si la question concerne une catégorie spécifique, concentre-toi sur cette section
 4. Fournis des informations précises avec des dates, des noms et des chiffres exacts
 5. Structure ta réponse avec des titres, des paragraphes et des listes si approprié
